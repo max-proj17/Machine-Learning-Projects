@@ -1,43 +1,57 @@
-# MNIST Handwritten Digits Classifier
+# Updated Project Repository Overview
 
-## Project Overview
-This project aims to build and optimize models for classifying handwritten digits (0-9) from the MNIST dataset. The focus is on developing several classifiers, including Gaussian classifiers with identity and common covariance, logistic regression classifiers, and their regularized versions. The project specifically emphasizes distinguishing between digits 2 and 3, and also extends to a multi-class classifier for all digits.
+## Introduction to the Repository
+This repository hosts a diverse collection of machine learning projects, including classifiers for handwritten digits and a NeRF (Neural Radiance Fields) implementation. The primary focus is on applying and optimizing various models to solve distinct problems, from digit recognition using the MNIST dataset to creating 3D scene representations with NeRF techniques.
 
-## Component 1: Gaussian Classifiers for Digits 2 and 3
-- **Objective**: To differentiate between handwritten digits 2 and 3 from the MNIST dataset.
-- **Methods**: 
-  - Data Subset: Selected only digits 2 and 3 from the MNIST dataset for targeted classification.
-  - Gaussian Classifier with Identity and Common Covariance: Developed classifiers considering different covariance structures.
-  - Logistic Regression Classifier: Implemented to classify between the two digits.
-  - Regularization Techniques: Applied to enhance model performance and prevent overfitting.
-- **Optimization**: 
-  - Dimensionality Reduction: Utilized eigenvalue decomposition.
-  - Regularization in Logistic Regression: Addressed overfitting issues.
-  - Hyperparameter Tuning: Conducted to identify optimal regularization strength.
+## Project 1: MNIST Handwritten Digits Classification
 
-## Component 2: Multiclass Classification for All Digits
-- **Objective**: To classify each of the 10 digits (0-9) in the MNIST dataset.
-- **Methods**:
-  - Standard Scaling and PCA: Employed for effective feature extraction.
-  - Gaussian Multi-Channel Classifier with Covariance: Developed for handling multiple classes.
-  - Multiclass Logistic Regression: Implemented both regularized and non-regularized versions.
+### Overview
+The goal is to classify handwritten digits (0-9) using the MNIST dataset. We explore Gaussian classifiers, logistic regression, and their regularized forms, emphasizing binary classification (digits 2 and 3) and extending to multiclass classification for all digits.
+
+### Component 1: Binary Classification of Digits 2 and 3
+- **Objective**: Distinguish between digits 2 and 3.
+- **Approach**:
+  - Data Subset Selection, Gaussian Classifiers with varied covariance structures, Logistic Regression, and Regularization to mitigate overfitting.
 - **Optimization**:
-  - PCA: Used for reducing dimensions while retaining significant variance.
-  - Regularized Logistic Regression: Improved model's generalization capabilities.
-  - Hyperparameter Tuning: Performed to optimize the model based on validation set performance.
+  - Eigenvalue-based Dimensionality Reduction, Regularization in Logistic Regression, and Hyperparameter Tuning.
 
-## Implementation Details
-- **Libraries Used**: The project utilizes NumPy for numerical operations, Matplotlib for visualization, SciPy for scientific computations, and scikit-learn for machine learning algorithms.
-- **Data Preprocessing**:
-  - Scaling: Employed StandardScaler to normalize features.
-  - PCA: Applied to reduce data dimensions, maintaining 95% of the variance.
-- **Model Evaluation**:
-  - Data Splitting: Divided the dataset into training, validation, and test sets for a comprehensive evaluation.
-  - Metrics: Focused on accuracy and the count of misclassifications as key performance indicators.
+### Component 2: Multiclass Classification for Digits 0-9
+- **Objective**: Classify all ten digits.
+- **Approach**:
+  - Feature extraction via Standard Scaling and PCA, Gaussian Multi-Channel Classifier, and Multiclass Logistic Regression.
+- **Optimization**:
+  - Dimension reduction with PCA, Regularized Logistic Regression, and Hyperparameter Adjustments.
 
-## Challenges and Solutions
-- **Overfitting with High-dimensional Data**: Overcoming overfitting was a challenge, especially with high-dimensional data. This was addressed by implementing regularization in logistic regression models and using PCA for dimensionality reduction.
-- **Bias-Variance Tradeoff**: Managing the bias-variance tradeoff was crucial. Systematic hyperparameter tuning and cross-validation were key strategies employed to achieve this balance.
+### Implementation and Evaluation
+- **Tools**: NumPy, Matplotlib, SciPy, scikit-learn.
+- **Data Handling**: StandardScaler for normalization, PCA for dimensionality reduction.
+- **Metrics**: Accuracy and misclassification count.
 
-## Conclusion
-This project illustrates the application of various machine learning models to classify handwritten digits from the MNIST dataset. Emphasis on optimization and regularization underscores their significance in practical machine learning scenarios. The project demonstrates that with thoughtful preprocessing and model tuning, high accuracy in digit classification is achievable.
+### Challenges
+Addressing overfitting in high-dimensional data and managing the bias-variance tradeoff through regularization and systematic tuning.
+
+### Conclusion
+The project demonstrates the efficacy of machine learning models in digit classification, highlighting the importance of optimization and regularization.
+
+## Project 2: Neural Radiance Fields (NeRF) Implementation
+
+### Overview
+An exploration into NeRF, utilizing PyTorch for constructing a 3D scene representation by synthesizing novel views from sparse input images.
+
+### Core Components
+- Positional Encoding for input coordinates.
+- Sequential fully-connected layers for modeling volume density and color.
+- Rendering rays for image synthesis with transmittance and volume rendering techniques.
+
+### Implementation Details
+- **Libraries**: PyTorch, NumPy, Matplotlib, DataLoader for batch processing.
+- **Training**: Loss computation, backpropagation, and epoch-wise training with visualization of results.
+- **Optimization**: Adam optimizer, learning rate scheduling.
+
+### Challenges and Solutions
+Effective 3D scene representation requires precise modeling of light transport and geometry, addressed through meticulous network design and training strategies.
+
+### Conclusion
+This project showcases the application of NeRF in creating photorealistic 3D scenes, emphasizing the potential of deep learning in computer vision and graphics.
+
+---
