@@ -1,4 +1,4 @@
-# Updated Project Repository Overview
+# Project Repository Overview
 
 ## Introduction to the Repository
 This repository hosts a diverse collection of machine learning projects, including classifiers for handwritten digits and a NeRF (Neural Radiance Fields) implementation. The primary focus is on applying and optimizing various models to solve distinct problems, from digit recognition using the MNIST dataset to creating 3D scene representations with NeRF techniques.
